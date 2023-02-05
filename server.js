@@ -2,13 +2,13 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors')
 const bodyParser = require('body-parser');
-
+const multer = require('multer');
 
 const router = require('./router/router');
 
 dotenv.config();
+
 const server = express();
-// server.use(fileUpload());
 
 server.use(cors());
 server.use(bodyParser.json())

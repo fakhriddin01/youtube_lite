@@ -1,0 +1,26 @@
+[
+    {
+        "userId": "e313991a-9836-415c-b5eb-97252e1f9689",
+        "username": "fakhriddin",
+        "password": "$2a$10$HW7.EniIgI3sWYj3gVxxF.6S95s2PCpE01gWUZaEaoPOpfS5Ky2gW",
+        "image": "1675511279149.png"
+    },
+    {
+        "userId": "f963cdd1-011b-4395-b41b-4846b9858e17",
+        "username": "admin",
+        "password": "$2a$10$CssVfJfgRk35OTZzjbBEw.83bRIoxNDaYY4I9hkFGu47n7L.EuUnO",
+        "image": "1675512574117.png"
+    },
+    {
+        "userId": "0763ebb4-f845-46b6-8801-160edce1c811",
+        "username": "user",
+        "password": "$2a$10$RBfzYLJvFrQFfZddI7qRfuDwXuMeFmStKas75gb3.rdB0dXsudbMK",
+        "image": "1675527326030.png"
+    },
+    {
+        "userId": "bb4bdc58-2e37-4cf9-9f10-ad551e5886e3",
+        "username": "fakhriddin1",
+        "password": "$2a$10$ttImxBZF0SrtA7MASW51n.yFNtS5.iNtqeBnQm6q7IDrJLTN9UvSm",
+        "image": "1675527663908.png"
+    }
+]

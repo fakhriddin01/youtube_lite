@@ -18,11 +18,11 @@
             <form id="register_form" class="site-form" multiple>
                 <label>
                     <span class="zmdi zmdi-account"></span>
-                    <input type="text" id="usernameInput" name="username" placeholder="Your name" required>
+                    <input type="text" id="usernameInput" name="username" placeholder="Your name">
                 </label>
                 <label>
                     <span class="zmdi zmdi-lock"></span>
-                    <input type="password" id="passwordInput" name="password" placeholder="Password" required>
+                    <input type="password" id="passwordInput" name="password" placeholder="Password">
                     <button class="zmdi zmdi-eye" type="button" id="showButton"></button>
                 </label>
                 <label class="custom-upload">
@@ -41,30 +41,4 @@
 </html>
 
 
-<script>
-    let register_form = document.querySelector('#register_form');
-
-    register_form.addEventListener('submit', (event)=> {
-        event.preventDefault();
-        let {username, password} = event.target
-        let uploadFile = document.querySelector('#uploadInput')
-        let file = uploadFile.files[0]
-        console.log(file.type, file.size);
-
-        
-
-        const formData = new FormData()
-        formData.append('username', username.value)
-        formData.append('password', password.value)
-        formData.append('file', file)
-     
-        // fetch("http://localhost:8000/register", {
-        //         method: "POST",
-        //         body: formData
-        //     }).then(info => info.json())
-        //     .then(token => console.log(token))
-
-    })
-
-
-</script>
+<script src="./script/register.js"></script>
