@@ -22,5 +22,11 @@
         "username": "fakhriddin1",
         "password": "$2a$10$ttImxBZF0SrtA7MASW51n.yFNtS5.iNtqeBnQm6q7IDrJLTN9UvSm",
         "image": "1675527663908.png"
+    },
+    {
+        "userId": "1766b8a9-4474-4527-9a7b-2ae82b180e12",
+        "username": "John Doe",
+        "password": "$2a$10$te8HX2cYpRPHCrxjtyhG.ed7WLZRh9J3RCsTJnH8N28JwO3sFHpJ.",
+        "image": null
     }
 ]

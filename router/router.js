@@ -1,25 +1,24 @@
 const express = require('express');
 const multer = require('multer');
-const Controller = require('../controller/controller');
 const path = require('path')
+const Controller = require('../controller/controller');
 const tokenCheck = require('../middleware/token')
+const fs = require('fs')
 
 const router = express.Router();
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {       
-        cb(null, 'model/upload_files/avatars')
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname))
-    }
-})
-const upload = multer({ storage: storage });
+const upload3 = multer();
+
+const upload = multer();
 
 router 
     .post('/login', Controller.LOGIN)
     .post('/register', upload.single('file'), Controller.REGISTER)
-    .post('/', tokenCheck, Controller.HOME_PAGE)
-
+    .post('/', Controller.HOME_PAGE)
+    .post('/admin_panel', tokenCheck, Controller.ADMIN_PANEL)
+    .post('/upload_video', upload3.single('video'), Controller.UPLOAD)
+    .delete('/delete_video/:id', Controller.DELETE)
+    .post('/update_video/:id', Controller.UPDATE)
+    // .post('/user_video/:id', Controller.USER_VIDEO)
 
 module.exports = router;

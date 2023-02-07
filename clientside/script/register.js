@@ -8,8 +8,6 @@ let register_form = document.querySelector('#register_form');
 
         if(!username.value){
             return alert('Please input username')
-        }else{
-
         }
         if(!password.value){
             return alert('Please input password')
@@ -38,15 +36,15 @@ let register_form = document.querySelector('#register_form');
                 method: "POST",
                 body: formData
             }).then(info => info.json())
-            .then(msg => {
-                if(msg == "succesfully registrated"){
-                    document.location.href = "./login.html", true;
+            .then(data => {
+                
+                if(data.msg == "succesfully registrated"){
+                    document.location.href = './login.html',true;
                 }
                 else{
-                    alert(msg)
+                    alert(data.msg)
                 }
-         
-            
+
             })
 
     })

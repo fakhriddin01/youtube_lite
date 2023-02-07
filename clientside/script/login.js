@@ -2,7 +2,7 @@ let login_form = document.querySelector('#login_form')
 
 login_form.addEventListener('submit', (event)=>{
     event.preventDefault();
-
+    
     let {username, password} = event.target
     fetch("http://localhost:8000/login", {
             method: "POST",

@@ -1,7 +1,67 @@
 [
     {
         "videoId": 1,
-        "userId": "e313991a-9836-415c-b5eb-97252e1f9689",
-        "videoName": "pexels-thirdman-5538137.mp4"
+        "user": {
+            "userId": "e313991a-9836-415c-b5eb-97252e1f9689",
+            "username": "fakhriddin",
+            "password": "$2a$10$HW7.EniIgI3sWYj3gVxxF.6S95s2PCpE01gWUZaEaoPOpfS5Ky2gW",
+            "image": "1675511279149.png"
+        },
+        "videoName": "pexels-thirdman-5538137.mp4",
+        "title": "fishing(no sound)",
+        "uploadTime": "2020/02/08 | 15:24",
+        "size": "20MB"
+    },
+    {
+        "videoId": "8ed9d6a4-b4ae-4724-bdba-cc19d51e4f51",
+        "user": {
+            "userId": "e313991a-9836-415c-b5eb-97252e1f9689",
+            "username": "fakhriddin",
+            "password": "$2a$10$HW7.EniIgI3sWYj3gVxxF.6S95s2PCpE01gWUZaEaoPOpfS5Ky2gW",
+            "image": "1675511279149.png"
+        },
+        "videoName": "1675685764781.webm",
+        "title": "elephant-dreams",
+        "uploadTime": "02/06/2023 | 17:16",
+        "size": 9
+    },
+    {
+        "videoId": "083f1056-c06d-4aec-8348-6b247510302c",
+        "user": {
+            "userId": "bb4bdc58-2e37-4cf9-9f10-ad551e5886e3",
+            "username": "fakhriddin1",
+            "password": "$2a$10$ttImxBZF0SrtA7MASW51n.yFNtS5.iNtqeBnQm6q7IDrJLTN9UvSm",
+            "image": "1675527663908.png"
+        },
+        "videoName": "1675686035324.mp4",
+        "title": "Raketa",
+        "uploadTime": "02/06/2023 | 17:20",
+        "size": 21
+    },
+    {
+        "videoId": "171eb297-39bf-45d3-9f57-cf509f2f96d9",
+        "user": {
+            "userId": "f963cdd1-011b-4395-b41b-4846b9858e17",
+            "username": "admin",
+            "password": "$2a$10$CssVfJfgRk35OTZzjbBEw.83bRIoxNDaYY4I9hkFGu47n7L.EuUnO",
+            "image": "1675512574117.png"
+        },
+        "videoName": "1675686170973.mp4",
+        "title": "Earth",
+        "uploadTime": "02/06/2023 | 17:22",
+        "size": 10
+    },
+    {
+        "videoId": "8943dd8f-9bc8-4560-bba8-f5ce9b426598",
+        "user": {
+            "userId": "e313991a-9836-415c-b5eb-97252e1f9689",
+            "username": "fakhriddin",
+            "password": "$2a$10$HW7.EniIgI3sWYj3gVxxF.6S95s2PCpE01gWUZaEaoPOpfS5Ky2gW",
+            "image": "1675511279149.png"
+        },
+        "videoName": "1675695772653.mp4",
+        "title": "Space shuttle",
+        "uploadTime": "02/06/2023 | 20:2",
+        "size": 21
     }
 ]
