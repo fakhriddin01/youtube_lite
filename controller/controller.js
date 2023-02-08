@@ -17,7 +17,7 @@ const Controller = {
         }
         if(foundUser && check_psw){
             let token = jwt.sign({ userId: foundUser.userId}, process.env.SECRET_KEY, {
-                expiresIn: '30m'
+                expiresIn: '1m'
             })
 
             res.status(200).json({

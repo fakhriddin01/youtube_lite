@@ -117,13 +117,14 @@ upload_form.addEventListener('submit', (event)=>{
         body: formData
     }).then(data => data.json())
     .then(info => {
-        if(info.stutus == "token"){
-            location.href = "./login.html"
+        if(info.status == "token"){
+            location.href = './login.html'
         }
         if(info.status == 'ok'){
             location.href = "./admin.html"
         }
-    
+        
+        return;
     
     })
 })

@@ -19,6 +19,5 @@ router
     .post('/upload_video', upload3.single('video'), Controller.UPLOAD)
     .delete('/delete_video/:id', Controller.DELETE)
     .post('/update_video/:id', Controller.UPDATE)
-    // .post('/user_video/:id', Controller.USER_VIDEO)
 
 module.exports = router;
