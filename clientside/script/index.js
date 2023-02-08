@@ -1,5 +1,37 @@
 let token  = localStorage.getItem('token');
 let userInfo = localStorage.getItem('userInfo')
+let search_title = localStorage.getItem('search');
+let search = document.querySelector('#search_input')
+
+
+const SR = new webkitSpeechRecognition();
+SR.lang = "en-US";
+
+mic.onclick = (e) => {
+    e.preventDefault();
+    SR.start();
+};
+
+SR.onresult = (event) => {
+    event.preventDefault();
+    let title = event.results[0][0].transcript;
+    if(title){
+        localStorage.setItem('search', title);
+        location.href='./index.html'
+    }else{
+        location.href='./index.html'
+    }
+}
+
+
+let search_btn = document.querySelector('#search_btn');
+search_btn.addEventListener('click', (event)=>{
+    event.preventDefault();
+    localStorage.setItem('search', search.value)
+    location.href='./index.html'
+} )
+
+
 fetch(`http://localhost:8000/`, {
     method: "POST",
     headers: {
@@ -7,7 +39,8 @@ fetch(`http://localhost:8000/`, {
     },
     body: JSON.stringify({
         token,
-        userInfo
+        userInfo,
+        search_title
     })
 }).then(data => data.json())
 .then(info => {
@@ -18,7 +51,8 @@ fetch(`http://localhost:8000/`, {
         let users = info.users
         let videos = info.videos
         let user = info.foundUser
-        let checkedUser  = info.checkedUser;
+    
+        let videos_for_search = info.videos_for_search;
 
         let navBar = document.querySelector('.navbar-list')
 
@@ -41,13 +75,25 @@ fetch(`http://localhost:8000/`, {
 
         let iframe = document.querySelector('.iframes-list');
         let datalist = document.querySelector('#datalist')
+
+
+        for(let vid of videos_for_search){
+            let [option] = createElement('option');
+            option.value = vid.title;
+            datalist.append(option)
+        }
+        
         for (let vid of videos){
-            let [li, video1, div1, img1, div2, h2, h3, time, a, span, img2, option] = createElement('li', 'video', 'div', 'img', 'div', 'h2', 'h3', 'time', 'a', 'span', 'img', 'option')
+            let [li, video1, div1, img1, div2, h2, h3, time, a, span, img2] = createElement('li', 'video', 'div', 'img', 'div', 'h2', 'h3', 'time', 'a', 'span', 'img')
             li.className = 'iframe';
             video1.src = `../model/upload_files/videos/${vid.videoName}`
             video1.setAttribute('controls', "");
             div1.className="iframe-footer"
-            img1.src=`../model/upload_files/avatars/${vid.user.image}`;
+            if(vid.user.image == null){
+                img1.src=`https://cdn-icons-png.flaticon.com/512/146/146031.png`
+            }else{
+                img1.src=`../model/upload_files/avatars/${vid.user.image}`;
+            }
             img1.setAttribute('alt', 'channel-icon')
             div2.className = 'iframe-footer-text';
             h2.className="channel-name";
@@ -57,16 +103,17 @@ fetch(`http://localhost:8000/`, {
             time.className = "uploaded-time";
             time.innerHTML = vid.uploadTime;
             a.className = 'download';
-            a.href = "#";
+            a.href = `../model/upload_files/videos/${vid.videoName}`;
+            a.setAttribute('download', vid.videoName)
             span.innerHTML = vid.size + "MB";
             img2.src="./img/download.png";
-            option.value = vid.title;
+            
             a.append(span, img2);
             div2.append(h2, h3, time, a)
             div1.append(img1, div2);
             li.append(video1, div1);
             iframe.append(li);
-            datalist.append(option)
+            
         }
 
         let homeBtn = document.querySelector('#youtube_icon');
@@ -105,8 +152,9 @@ fetch(`http://localhost:8000/`, {
             navBar.append(li);
            
         }
-
+        
         localStorage.removeItem("userInfo");
+        localStorage.removeItem("search");
 
     }
 })

@@ -88,22 +88,30 @@ const Controller = {
         if(req.body.userInfo){
             userInfo=req.body.userInfo
         }
+        let search;
+        if(req.body.search_title){
+           search=req.body.search_title
+        }
 
         let userId = token.userId;
         let users = JSON.parse(fs.readFileSync('./model/users.json'))
         let foundUser = users.find(u => u.userId == userId);
         let videos = JSON.parse(fs.readFileSync('./model/videos.json'))
-
+        let videos_for_search =videos;
         if(userInfo){
            videos = videos.filter(vid => vid.user.username == userInfo);
         }
 
+        if(search){
+            videos=videos.filter(vid => vid.title.toLowerCase().includes(search.toLowerCase()))
+        }
         res.status(200).json({
             status: "ok",
             users,
             foundUser,
             videos,
-            checkedUser: userInfo
+            videos_for_search,
+         
         })
     },
     ADMIN_PANEL: async (req, res)=>{
