@@ -17,7 +17,7 @@ const Controller = {
         }
         if(foundUser && check_psw){
             let token = jwt.sign({ userId: foundUser.userId}, process.env.SECRET_KEY, {
-                expiresIn: '1m'
+                expiresIn: '20m'
             })
 
             res.status(200).json({
@@ -89,8 +89,10 @@ const Controller = {
             userInfo=req.body.userInfo
         }
         let search;
+        let check_search_title;
         if(req.body.search_title){
            search=req.body.search_title
+           check_search_title = true;
         }
 
         let userId = token.userId;
@@ -111,6 +113,7 @@ const Controller = {
             foundUser,
             videos,
             videos_for_search,
+            check_search_title
          
         })
     },

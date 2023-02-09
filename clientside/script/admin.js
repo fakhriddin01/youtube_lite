@@ -1,4 +1,13 @@
 let token  = localStorage.getItem('token')
+
+let logout = document.querySelector('#logout')
+
+logout.addEventListener('click', (event)=>{
+    event.preventDefault();
+    localStorage.removeItem('token')
+    location.href='./admin.html'
+})
+
 fetch("http://localhost:8000/admin_panel", {
     method: "POST",
     headers: {

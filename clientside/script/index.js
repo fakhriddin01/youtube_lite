@@ -15,6 +15,7 @@ mic.onclick = (e) => {
 SR.onresult = (event) => {
     event.preventDefault();
     let title = event.results[0][0].transcript;
+    localStorage.setItem('search_value', title)
     if(title){
         localStorage.setItem('search', title);
         location.href='./index.html'
@@ -28,6 +29,7 @@ let search_btn = document.querySelector('#search_btn');
 search_btn.addEventListener('click', (event)=>{
     event.preventDefault();
     localStorage.setItem('search', search.value)
+    localStorage.setItem('search_value', search.value)
     location.href='./index.html'
 } )
 
@@ -51,6 +53,11 @@ fetch(`http://localhost:8000/`, {
         let users = info.users
         let videos = info.videos
         let user = info.foundUser
+
+        if(info.check_search_title){
+            let search_val = localStorage.getItem('search_value');
+            search.value = search_val;
+        }
     
         let videos_for_search = info.videos_for_search;
 

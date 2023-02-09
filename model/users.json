@@ -28,5 +28,17 @@
         "username": "John Doe",
         "password": "$2a$10$te8HX2cYpRPHCrxjtyhG.ed7WLZRh9J3RCsTJnH8N28JwO3sFHpJ.",
         "image": null
+    },
+    {
+        "userId": "72312990-f716-4470-bf24-fa5ee64b49f8",
+        "username": "username",
+        "password": "$2a$10$iYqbcW7VIQyaCRLkdumoN.qump7sM73sTDW8Rp.KleFTkZqcoaloi",
+        "image": "1675858736977.png"
+    },
+    {
+        "userId": "81dc1daf-ffce-400f-b735-9ca7db653689",
+        "username": "user3",
+        "password": "$2a$10$GB7jA46YAf6p0DnYZy3d6ORxZc33124l.1BBVRonejHuJrVoeGenq",
+        "image": null
     }
 ]
